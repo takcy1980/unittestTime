@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
  */
 public class TimeTest {
 
-    
+    Time instance;
         
     public TimeTest() {
 
@@ -28,6 +28,7 @@ public class TimeTest {
     
     @BeforeClass
     public static void setUpClass() {
+       
         
     }
     
@@ -37,7 +38,7 @@ public class TimeTest {
     
     @Before
     public void setUp() {
-        
+        instance = new Time(2015, 2, 25, 8, 25);
 
     }
     
@@ -51,7 +52,7 @@ public class TimeTest {
     @Test
     public void testGetDayInWeek() {
         System.out.println("getDayInWeek");
-        Time instance = new Time(2015, 2, 25, 8, 25);
+        //Time instance = new Time(2015, 2, 25, 8, 25);
         DayInWeek expResult  = DayInWeek.WED;
         DayInWeek result = instance.getDayInWeek();
         assertEquals(expResult, result);
@@ -64,12 +65,11 @@ public class TimeTest {
     @Test
     public void testGetYear() {
         System.out.println("getYear");
-        Time instance = null;
-        int expResult = 0;
+        //Time instance = null;
+        int expResult = 2015;
         int result = instance.getYear();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -78,12 +78,11 @@ public class TimeTest {
     @Test
     public void testGetMonth() {
         System.out.println("getMonth");
-        Time instance = null;
-        int expResult = 0;
+
+        int expResult = 2;
         int result = instance.getMonth();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -92,12 +91,11 @@ public class TimeTest {
     @Test
     public void testGetDay() {
         System.out.println("getDay");
-        Time instance = null;
-        int expResult = 0;
+
+        int expResult = 25;
         int result = instance.getDay();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -106,12 +104,11 @@ public class TimeTest {
     @Test
     public void testGetHours() {
         System.out.println("getHours");
-        Time instance = null;
-        int expResult = 0;
+
+        int expResult = 8;
         int result = instance.getHours();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -120,12 +117,11 @@ public class TimeTest {
     @Test
     public void testGetMinutes() {
         System.out.println("getMinutes");
-        Time instance = null;
-        int expResult = 0;
+
+        int expResult = 25;
         int result = instance.getMinutes();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -134,13 +130,17 @@ public class TimeTest {
     @Test
     public void testPlus() {
         System.out.println("plus");
-        int minutes = 0;
-        Time instance = null;
-        ITime expResult = null;
+        int minutes = 10;
+        Time newTime = new Time(2015, 2, 25, 8, 35);
+        ITime expResult = newTime;
         ITime result = instance.plus(minutes);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //assertTrue(expResult.equals(result));
+        assertEquals(expResult.getMinutes(), result.getMinutes());
+   
+        
+        
+  
+
     }
 
     /**
@@ -149,13 +149,12 @@ public class TimeTest {
     @Test
     public void testCompareTo() {
         System.out.println("compareTo");
-        ITime t = null;
-        Time instance = null;
-        int expResult = 0;
+        ITime t = new Time(2015, 2, 25, 13, 25);
+
+        int expResult = 1;
         int result = instance.compareTo(t);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -164,13 +163,10 @@ public class TimeTest {
     @Test
     public void testDifference() {
         System.out.println("difference");
-        ITime time = null;
-        Time instance = null;
-        int expResult = 0;
+        ITime time = new Time(2015, 2, 25, 10, 25);
+        int expResult = 2;
         int result = instance.difference(time);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
     
 }
