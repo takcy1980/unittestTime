@@ -5,6 +5,7 @@
  */
 package fontys.time;
 
+import java.util.GregorianCalendar;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,6 +19,7 @@ import static org.junit.Assert.*;
  */
 public class ITimeTest {
     Time instance;
+    GregorianCalendar gc;
     
     public ITimeTest() {
     }
@@ -32,6 +34,7 @@ public class ITimeTest {
     
     @Before
     public void setUp() {
+        gc = new GregorianCalendar();
         instance = new Time(2015, 2, 25, 8, 25);
     }
     
@@ -131,11 +134,11 @@ public class ITimeTest {
     @Test
     public void testDifference() {
         System.out.println("difference");
-        ITime time = new Time(2015, 2, 25, 10, 25);
-        int expResult = 2;
+        ITime time = new Time(2015, 2, 25, 8, 21);
+        int expResult = 4;
         int result = instance.difference(time);
+        assertEquals(expResult, result);
     }
-
-   
+ 
     
 }
